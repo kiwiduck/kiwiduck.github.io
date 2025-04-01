@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Selenium Practice Page - Checkboxes and Radio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div id="content" class="eleven column" style="margin-top: 10%">
+            <h1>Checkboxes</h1>
+            <label><input id="one" type="checkbox" value="one"/><span class="label-body">One</span></label>
+            <label><input id="two" type="checkbox" value="two"/><span class="label-body">Two</span></label>
+            <label><input id="three" type="checkbox" value="three"/><span class="label-body">Three</span></label>
+            <button id="go">Get Results</button>
+            <label id="result"></label>
+
+            <h1>Radio</h1>
+            <label><input id="radio_one" name="number" type="radio" value="one"/><span
+                    class="label-body">One</span></label>
+            <label><input id="radio_two" name="number" type="radio" value="two"/><span
+                    class="label-body">Two</span></label>
+            <label><input id="radio_three" name="number" type="radio" value="three"/><span
+                    class="label-body">Three</span></label>
+            <button id="radio_go" class="button-primary">Get Results</button>
+            <label id="radio_result"></label>
+        </div>
+    </div>
+</div>
+<script>
+    go.onclick = function () {
+        let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+        var value = "";
+        for (let checkbox of checkboxes) {
+            value = value + " " + checkbox.value
+        }
+        result.textContent = value;
+        showBack();
+    };
+    radio_go.onclick = function () {
+        radio_result.textContent = document.querySelector("input[name='number']:checked").value;
+        showBack()
+    };
+    function showBack() {
+        if (result.textContent !== "" && radio_result.textContent !== "" && document.getElementById("back") == null) {
+            let label = document.createElement('label');
+            label.id = 'back';
+            label.innerHTML = "<a href='..'>Great! Return to menu</a>";
+            content.append(label)
+            Cookies.set("checkboxes", "done")
+        }
+    }
+</script>
+</body>
+</html>
