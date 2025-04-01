@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Selenium Practice Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="eleven column" style="margin-top: 10%">
+            <h1>Selenium WebDriver Practice Page</h1>
+            <ol>
+                <li><a id="button" href="button">First task</a></li>
+                <li><a id="checkbox" href="checkboxes">Second task</a></li>
+                <li><a id="select" href="select">Third task</a></li>
+                <li><a id="form" href="form">Fourth task</a></li>
+                <li><a id="iframe" href="iframe">Fifth task</a></li>
+                <li><a id="alerts" href="alerts">Sixth task</a></li>
+                <li><a id="table" href="table">Seventh task</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
+<script>
+    if (Cookies.get("button") !== undefined) {
+        $("#button").css("text-decoration", "line-through")
+    }
+    if (Cookies.get("checkboxes") !== undefined) {
+        $("#checkbox").css("text-decoration", "line-through")
+    }
+    if (Cookies.get("select") !== undefined) {
+        $("#select").css("text-decoration", "line-through")
+    }
+    if (Cookies.get("form") !== undefined) {
+        $("#form").css("text-decoration", "line-through")
+    }
+    if (Cookies.get("iframe") !== undefined) {
+        $("#iframe").css("text-decoration", "line-through")
+    }
+    if (Cookies.get("alerts") !== undefined) {
+        $("#alerts").css("text-decoration", "line-through")
+    }
+    if (Cookies.get("alerts") !== undefined) {
+        $("#alerts").css("text-decoration", "line-through")
+    }
+    if (Cookies.get("table") !== undefined) {
+        $("#table").css("text-decoration", "line-through")
+    }
+</script>
+</body>
+</html>
