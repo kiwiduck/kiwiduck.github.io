@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Selenium Practice Page - Button</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div id="content" class="eleven column" style="margin-top: 10%">
+            <h1>Button</h1>
+            <button id="first">Click me!</button>
+            <label id="result"></label>
+        </div>
+    </div>
+</div>
+<script>
+    first.onclick = function () {
+        let label = document.createElement('label');
+        label.id = 'result';
+        label.textContent = 'Excellent!';
+        content.append(label);
+        let button2 = document.createElement("input");
+        button2.type = 'button';
+        button2.className = "button-primary";
+        button2.value = 'Click me too!';
+        button2.onclick = function () {
+            if (document.getElementById("back") == null) {
+                let label = document.createElement('label');
+                label.id = 'back';
+                label.innerHTML = "<a href='..'>Great! Return to menu</a>";
+                content.append(label);
+                Cookies.set("button", "done")
+            }
+        };
+        content.append(button2)
+    }
+</script>
+</body>
+</html>
